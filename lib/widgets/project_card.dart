@@ -10,86 +10,194 @@ class ProjectCard extends StatelessWidget {
   Color _getStatusColor() {
     switch (project.progressStatus) {
       case 'approved':
-        return Colors.green;
+        return const Color(0xFF16A34A);
       case 'rejected':
-        return Colors.red;
+        return const Color(0xFFDC2626);
       case 'submitted':
-        return Colors.orange;
+        return const Color(0xFFF59E0B);
       case 'in_progress':
-        return Colors.blue;
+        return const Color(0xFF2563EB);
+      case 'pending':
+        return const Color(0xFFF59E0B);
       default:
-        return Colors.grey;
+        return const Color(0xFF64748B);
+    }
+  }
+
+  String _getStatusText() {
+    switch (project.progressStatus) {
+      case 'approved':
+        return 'Approved';
+      case 'rejected':
+        return 'Rejected';
+      case 'submitted':
+        return 'Submitted';
+      case 'in_progress':
+        return 'In Progress';
+      case 'pending':
+        return 'Pending';
+      default:
+        return project.progressStatus;
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    final statusColor = _getStatusColor();
+
+    return Container(
       margin: const EdgeInsets.only(bottom: 16),
-      elevation: 4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(12),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Text(
-                      project.title,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: const Color(0xFFE2E8F0)),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF0F172A).withValues(alpha: 0.05),
+            blurRadius: 16,
+            offset: const Offset(0, 8),
+          ),
+        ],
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(8),
+          child: IntrinsicHeight(
+            child: Row(
+              children: [
+                Container(
+                  width: 5,
+                  decoration: BoxDecoration(
+                    color: statusColor,
+                    borderRadius: const BorderRadius.horizontal(
+                      left: Radius.circular(8),
                     ),
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8,
-                      vertical: 4,
-                    ),
-                    decoration: BoxDecoration(
-                      color: _getStatusColor().withValues(alpha: 0.2),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Text(
-                      project.progressStatus.toUpperCase(),
-                      style: TextStyle(color: _getStatusColor(), fontSize: 12),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(18),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                project.title,
+                                style: const TextStyle(
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w800,
+                                  color: Color(0xFF172033),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 12),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 10,
+                                vertical: 6,
+                              ),
+                              decoration: BoxDecoration(
+                                color: statusColor.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                  color: statusColor.withValues(alpha: 0.2),
+                                ),
+                              ),
+                              child: Text(
+                                _getStatusText().toUpperCase(),
+                                style: TextStyle(
+                                  color: statusColor,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Text(
+                          project.description,
+                          style: const TextStyle(
+                            color: Color(0xFF64748B),
+                            height: 1.4,
+                            fontSize: 14,
+                          ),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(height: 16),
+                        Wrap(
+                          spacing: 10,
+                          runSpacing: 8,
+                          children: [
+                            _MetaChip(
+                              icon: Icons.person_outline,
+                              label: project.supervisorName,
+                            ),
+                            _MetaChip(
+                              icon: Icons.code,
+                              label: project.technologies,
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
-              const SizedBox(height: 8),
-              Text(
-                project.description,
-                style: const TextStyle(color: Colors.grey),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              const SizedBox(height: 8),
-              Row(
-                children: [
-                  const Icon(Icons.person, size: 16, color: Colors.grey),
-                  const SizedBox(width: 4),
-                  Text('Supervisor: ${project.supervisorName}'),
-                ],
-              ),
-              const SizedBox(height: 4),
-              Row(
-                children: [
-                  const Icon(Icons.code, size: 16, color: Colors.grey),
-                  const SizedBox(width: 4),
-                  Text('Tech: ${project.technologies}'),
-                ],
-              ),
-            ],
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(right: 14),
+                  child: Icon(
+                    Icons.chevron_right,
+                    color: Color(0xFF94A3B8),
+                    size: 24,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _MetaChip extends StatelessWidget {
+  final IconData icon;
+  final String label;
+
+  const _MetaChip({required this.icon, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+      decoration: BoxDecoration(
+        color: const Color(0xFFF8FAFC),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: const Color(0xFFE2E8F0)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 16, color: const Color(0xFF64748B)),
+          const SizedBox(width: 6),
+          Flexible(
+            child: Text(
+              label,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                color: Color(0xFF475569),
+                fontSize: 13,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

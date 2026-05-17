@@ -26,13 +26,71 @@ class MyApp extends StatelessWidget {
 
   const MyApp({super.key, this.firebaseError});
 
+  ThemeData _buildTheme() {
+    const seedColor = Color(0xFF2563EB);
+
+    return ThemeData(
+      useMaterial3: true,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: seedColor,
+        brightness: Brightness.light,
+      ),
+      scaffoldBackgroundColor: const Color(0xFFF8FAFC),
+      visualDensity: VisualDensity.adaptivePlatformDensity,
+      appBarTheme: const AppBarTheme(
+        centerTitle: false,
+        elevation: 0,
+        titleTextStyle: TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+          fontWeight: FontWeight.w700,
+        ),
+      ),
+      cardTheme: CardThemeData(
+        color: Colors.white,
+        elevation: 0,
+        margin: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+          side: const BorderSide(color: Color(0xFFE2E8F0)),
+        ),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: Colors.white,
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 14,
+          vertical: 14,
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: Color(0xFFCBD5E1)),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: Color(0xFFCBD5E1)),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: seedColor, width: 1.4),
+        ),
+      ),
+      filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          textStyle: const TextStyle(fontWeight: FontWeight.w700),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     if (firebaseError != null) {
       return MaterialApp(
         title: 'FYP Management System',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(primarySwatch: Colors.blue),
+        theme: _buildTheme(),
         home: FirebaseSetupErrorScreen(error: firebaseError!),
       );
     }
@@ -42,10 +100,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'FYP Management System',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
+        theme: _buildTheme(),
         routes: {'/login': (_) => const LoginScreen()},
         home: const SplashScreen(),
       ),
