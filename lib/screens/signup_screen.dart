@@ -66,7 +66,7 @@ class _SignupScreenState extends State<SignupScreen> {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.blue, Colors.purple],
+            colors: [Color(0xFFFF74B7), Color(0xFFF9C7D8), Color(0xFF4B1F55)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -86,7 +86,11 @@ class _SignupScreenState extends State<SignupScreen> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.school, size: 80, color: Colors.blue),
+                      const Icon(
+                        Icons.school,
+                        size: 80,
+                        color: Color(0xFF4B1F55),
+                      ),
                       const SizedBox(height: 20),
                       const Text(
                         'Create Account',

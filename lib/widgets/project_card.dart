@@ -16,7 +16,7 @@ class ProjectCard extends StatelessWidget {
       case 'submitted':
         return const Color(0xFFF59E0B);
       case 'in_progress':
-        return const Color(0xFF2563EB);
+        return const Color(0xFF4B1F55);
       case 'pending':
         return const Color(0xFFF59E0B);
       default:

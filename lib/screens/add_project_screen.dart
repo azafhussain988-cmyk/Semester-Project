@@ -110,7 +110,7 @@ class _AddProjectScreenState extends State<AddProjectScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Add New Project'),
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color(0xFF4B1F55),
         foregroundColor: Colors.white,
       ),
       body: SingleChildScrollView(

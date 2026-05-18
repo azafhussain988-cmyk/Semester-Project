@@ -27,7 +27,8 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key, this.firebaseError});
 
   ThemeData _buildTheme() {
-    const seedColor = Color(0xFF2563EB);
+    const seedColor = Color(0xFF4B1F55);
+    const backgroundColor = Color(0xFFFFF3F8);
 
     return ThemeData(
       useMaterial3: true,
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         seedColor: seedColor,
         brightness: Brightness.light,
       ),
-      scaffoldBackgroundColor: const Color(0xFFF8FAFC),
+      scaffoldBackgroundColor: backgroundColor,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       appBarTheme: const AppBarTheme(
         centerTitle: false,
@@ -64,11 +65,11 @@ class MyApp extends StatelessWidget {
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: Color(0xFFCBD5E1)),
+          borderSide: const BorderSide(color: Color(0xFFE7C9D7)),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: Color(0xFFCBD5E1)),
+          borderSide: const BorderSide(color: Color(0xFFE7C9D7)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),

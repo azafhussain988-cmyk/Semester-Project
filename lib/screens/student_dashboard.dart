@@ -11,10 +11,10 @@ import 'profile_screen.dart';
 import 'progress_tracking_screen.dart';
 import 'project_details_screen.dart';
 
-const Color _studentPrimaryBlue = Color(0xFF3B82F6);
-const Color _studentDeepBlue = Color(0xFF1E40AF);
-const Color _studentSoftBlue = Color(0xFFEFF6FF);
-const Color _studentBorderBlue = Color(0xFFBFDBFE);
+const Color _studentPrimaryBlue = Color(0xFF4B1F55);
+const Color _studentDeepBlue = Color(0xFF2B123D);
+const Color _studentSoftBlue = Color(0xFFFFF3F8);
+const Color _studentBorderBlue = Color(0xFFE7C9D7);
 
 class StudentDashboard extends StatelessWidget {
   const StudentDashboard({super.key});

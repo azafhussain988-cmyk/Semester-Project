@@ -24,7 +24,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
   final TextEditingController _feedbackController = TextEditingController();
   bool _isLoading = false;
 
-  static const Color _studentColor = Color(0xFF2563EB);
+  static const Color _studentColor = Color(0xFF4B1F55);
   static const Color _supervisorColor = Color(0xFF16A34A);
   static const Color _surfaceColor = Color(0xFFF8FAFC);
   static const Color _textColor = Color(0xFF172033);
@@ -123,7 +123,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
       case 'rejected':
         return const Color(0xFFDC2626);
       case 'in_progress':
-        return const Color(0xFF2563EB);
+        return const Color(0xFF4B1F55);
       case 'pending':
         return const Color(0xFFF59E0B);
       default:
@@ -349,7 +349,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                 ),
                 _buildActionButton(
                   'In Progress',
-                  const Color(0xFF2563EB),
+                  const Color(0xFF4B1F55),
                   Icons.engineering,
                   'in_progress',
                 ),
