@@ -13,6 +13,10 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  static const Color _blue = Color(0xFF3E6478);
+  static const Color _mist = Color(0xFFA9C9CB);
+  static const Color _teal = Color(0xFF7FAEB4);
+
   @override
   void initState() {
     super.initState();
@@ -53,7 +57,8 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFFFF74B7), Color(0xFFF9C7D8), Color(0xFF4B1F55)],
+            colors: [_blue, _mist, _teal],
+            stops: [0, 0.58, 1],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
