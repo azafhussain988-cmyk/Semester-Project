@@ -16,7 +16,7 @@ class ProjectCard extends StatelessWidget {
       case 'submitted':
         return const Color(0xFFF59E0B);
       case 'in_progress':
-        return const Color(0xFF4B1F55);
+        return const Color(0xFF3E6478);
       case 'pending':
         return const Color(0xFFF59E0B);
       default:
@@ -50,7 +50,7 @@ class ProjectCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xFFE2E8F0)),
+        border: Border.all(color: const Color(0xFFC8DDDF)),
         boxShadow: [
           BoxShadow(
             color: const Color(0xFF0F172A).withValues(alpha: 0.05),
@@ -177,9 +177,9 @@ class _MetaChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: BoxDecoration(
-        color: const Color(0xFFF8FAFC),
+        color: const Color(0xFFF3F8F9),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xFFE2E8F0)),
+        border: Border.all(color: const Color(0xFFC8DDDF)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

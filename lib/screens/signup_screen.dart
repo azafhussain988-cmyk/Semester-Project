@@ -66,7 +66,8 @@ class _SignupScreenState extends State<SignupScreen> {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFFFF74B7), Color(0xFFF9C7D8), Color(0xFF4B1F55)],
+            colors: [Color(0xFF3E6478), Color(0xFFA9C9CB), Color(0xFF7FAEB4)],
+            stops: [0, 0.58, 1],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -89,7 +90,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       const Icon(
                         Icons.school,
                         size: 80,
-                        color: Color(0xFF4B1F55),
+                        color: Color(0xFF3E6478),
                       ),
                       const SizedBox(height: 20),
                       const Text(

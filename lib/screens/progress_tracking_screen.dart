@@ -130,7 +130,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Progress Tracking'),
-        backgroundColor: const Color(0xFF4B1F55),
+        backgroundColor: const Color(0xFF3E6478),
         foregroundColor: Colors.white,
       ),
       body: _isLoading
@@ -315,7 +315,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen> {
       floatingActionButton: _projects.isNotEmpty
           ? FloatingActionButton(
               onPressed: _showAddProgressDialog,
-              backgroundColor: const Color(0xFF4B1F55),
+              backgroundColor: const Color(0xFF3E6478),
               child: const Icon(Icons.add),
             )
           : null,

@@ -8,11 +8,17 @@ class FirestoreService {
 
   // CRUD Operations for Projects
   Future<void> addProject(ProjectModel project) async {
-    await _firestore.collection('projects').doc(project.id).set(project.toJson());
+    await _firestore
+        .collection('projects')
+        .doc(project.id)
+        .set(project.toJson());
   }
 
   Future<ProjectModel?> getProject(String id) async {
-    DocumentSnapshot doc = await _firestore.collection('projects').doc(id).get();
+    DocumentSnapshot doc = await _firestore
+        .collection('projects')
+        .doc(id)
+        .get();
     if (doc.exists) {
       return ProjectModel.fromJson(doc.data() as Map<String, dynamic>);
     }
@@ -20,7 +26,10 @@ class FirestoreService {
   }
 
   Future<void> updateProject(ProjectModel project) async {
-    await _firestore.collection('projects').doc(project.id).update(project.toJson());
+    await _firestore
+        .collection('projects')
+        .doc(project.id)
+        .update(project.toJson());
   }
 
   Future<void> deleteProject(String id) async {
@@ -37,7 +46,7 @@ class FirestoreService {
           List<ProjectModel> projects = snapshot.docs
               .map((doc) => ProjectModel.fromJson(doc.data()))
               .toList();
-          
+
           // Sort on client side - works immediately!
           projects.sort((a, b) => b.createdAt.compareTo(a.createdAt));
           return projects;
@@ -54,7 +63,7 @@ class FirestoreService {
           List<ProjectModel> projects = snapshot.docs
               .map((doc) => ProjectModel.fromJson(doc.data()))
               .toList();
-          
+
           // Sort on client side - works immediately!
           projects.sort((a, b) => b.createdAt.compareTo(a.createdAt));
           return projects;
@@ -63,7 +72,10 @@ class FirestoreService {
 
   // Progress Tracking
   Future<void> addProgress(ProgressModel progress) async {
-    await _firestore.collection('progress').doc(progress.id).set(progress.toJson());
+    await _firestore
+        .collection('progress')
+        .doc(progress.id)
+        .set(progress.toJson());
   }
 
   Stream<List<ProgressModel>> getProjectProgress(String projectId) {
@@ -75,7 +87,7 @@ class FirestoreService {
           List<ProgressModel> progresses = snapshot.docs
               .map((doc) => ProgressModel.fromJson(doc.data()))
               .toList();
-          
+
           progresses.sort((a, b) => b.date.compareTo(a.date));
           return progresses;
         });
@@ -83,7 +95,10 @@ class FirestoreService {
 
   // Feedback
   Future<void> addFeedback(FeedbackModel feedback) async {
-    await _firestore.collection('feedback').doc(feedback.id).set(feedback.toJson());
+    await _firestore
+        .collection('feedback')
+        .doc(feedback.id)
+        .set(feedback.toJson());
   }
 
   Stream<List<FeedbackModel>> getProjectFeedback(String projectId) {
@@ -95,7 +110,7 @@ class FirestoreService {
           List<FeedbackModel> feedbacks = snapshot.docs
               .map((doc) => FeedbackModel.fromJson(doc.data()))
               .toList();
-          
+
           feedbacks.sort((a, b) => b.timestamp.compareTo(a.timestamp));
           return feedbacks;
         });

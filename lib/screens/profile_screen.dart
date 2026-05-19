@@ -12,7 +12,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profile'),
-        backgroundColor: const Color(0xFF4B1F55),
+        backgroundColor: const Color(0xFF3E6478),
         foregroundColor: Colors.white,
       ),
       body: FutureBuilder(
@@ -33,10 +33,11 @@ class ProfileScreen extends StatelessWidget {
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color(0xFFFF74B7),
-                        Color(0xFFF9C7D8),
-                        Color(0xFF4B1F55),
+                        Color(0xFF3E6478),
+                        Color(0xFFA9C9CB),
+                        Color(0xFF7FAEB4),
                       ],
+                      stops: [0, 0.58, 1],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
@@ -51,7 +52,7 @@ class ProfileScreen extends StatelessWidget {
                               ? Icons.person
                               : Icons.supervisor_account,
                           size: 50,
-                          color: const Color(0xFF4B1F55),
+                          color: const Color(0xFF3E6478),
                         ),
                       ),
                       const SizedBox(height: 16),
@@ -98,7 +99,7 @@ class ProfileScreen extends StatelessWidget {
                           ListTile(
                             leading: const Icon(
                               Icons.email,
-                              color: Color(0xFF4B1F55),
+                              color: Color(0xFF3E6478),
                             ),
                             title: const Text('Email Address'),
                             subtitle: Text(user.email),
@@ -107,7 +108,7 @@ class ProfileScreen extends StatelessWidget {
                           ListTile(
                             leading: const Icon(
                               Icons.badge,
-                              color: Color(0xFF4B1F55),
+                              color: Color(0xFF3E6478),
                             ),
                             title: const Text('User ID'),
                             subtitle: Text(user.uid),
@@ -116,7 +117,7 @@ class ProfileScreen extends StatelessWidget {
                           ListTile(
                             leading: const Icon(
                               Icons.calendar_today,
-                              color: Color(0xFF4B1F55),
+                              color: Color(0xFF3E6478),
                             ),
                             title: const Text('Member Since'),
                             subtitle: const Text('2024'),

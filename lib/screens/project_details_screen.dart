@@ -24,9 +24,9 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
   final TextEditingController _feedbackController = TextEditingController();
   bool _isLoading = false;
 
-  static const Color _studentColor = Color(0xFF4B1F55);
+  static const Color _studentColor = Color(0xFF3E6478);
   static const Color _supervisorColor = Color(0xFF16A34A);
-  static const Color _surfaceColor = Color(0xFFF8FAFC);
+  static const Color _surfaceColor = Color(0xFFF3F8F9);
   static const Color _textColor = Color(0xFF172033);
 
   @override
@@ -123,7 +123,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
       case 'rejected':
         return const Color(0xFFDC2626);
       case 'in_progress':
-        return const Color(0xFF4B1F55);
+        return const Color(0xFF3E6478);
       case 'pending':
         return const Color(0xFFF59E0B);
       default:
@@ -349,7 +349,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                 ),
                 _buildActionButton(
                   'In Progress',
-                  const Color(0xFF4B1F55),
+                  const Color(0xFF3E6478),
                   Icons.engineering,
                   'in_progress',
                 ),
@@ -441,9 +441,9 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xFFF8FAFC),
+                color: const Color(0xFFF3F8F9),
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: const Color(0xFFE2E8F0)),
+                border: Border.all(color: const Color(0xFFC8DDDF)),
               ),
               child: const Text(
                 'No feedback has been submitted for this project yet.',
@@ -462,9 +462,9 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                 margin: const EdgeInsets.only(bottom: 10),
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF8FAFC),
+                  color: const Color(0xFFF3F8F9),
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: const Color(0xFFE2E8F0)),
+                  border: Border.all(color: const Color(0xFFC8DDDF)),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -520,8 +520,8 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFFF8FAFC),
-        border: Border.all(color: const Color(0xFFE2E8F0)),
+        color: const Color(0xFFF3F8F9),
+        border: Border.all(color: const Color(0xFFC8DDDF)),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
@@ -634,7 +634,7 @@ class _Panel extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xFFE2E8F0)),
+        border: Border.all(color: const Color(0xFFC8DDDF)),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.04),

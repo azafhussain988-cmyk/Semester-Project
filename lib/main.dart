@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key, this.firebaseError});
 
   ThemeData _buildTheme() {
-    const seedColor = Color(0xFF4B1F55);
-    const backgroundColor = Color(0xFFFFF3F8);
+    const seedColor = Color(0xFF3E6478);
+    const backgroundColor = Color(0xFFF3F8F9);
 
     return ThemeData(
       useMaterial3: true,
@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
         margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
-          side: const BorderSide(color: Color(0xFFE2E8F0)),
+          side: const BorderSide(color: Color(0xFFC8DDDF)),
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
@@ -65,11 +65,11 @@ class MyApp extends StatelessWidget {
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: Color(0xFFE7C9D7)),
+          borderSide: const BorderSide(color: Color(0xFFC8DDDF)),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: Color(0xFFE7C9D7)),
+          borderSide: const BorderSide(color: Color(0xFFC8DDDF)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
@@ -117,7 +117,7 @@ class FirebaseSetupErrorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF7F9FC),
+      backgroundColor: const Color(0xFFF3F8F9),
       body: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 720),
