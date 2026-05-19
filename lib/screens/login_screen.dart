@@ -13,10 +13,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  static const Color _pink = Color(0xFFFF74B7);
-  static const Color _blush = Color(0xFFF9C7D8);
-  static const Color _plum = Color(0xFF4B1F55);
-  static const Color _deepPlum = Color(0xFF2B123D);
+  static const Color _blue = Color(0xFF3E6478);
+  static const Color _mist = Color(0xFFA9C9CB);
+  static const Color _teal = Color(0xFF7FAEB4);
+  static const Color _deepBlue = Color(0xFF2F566B);
 
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
@@ -73,8 +73,8 @@ class _LoginScreenState extends State<LoginScreen> {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [_pink, _blush, _plum],
-            stops: [0, 0.52, 1],
+            colors: [_blue, _mist, _teal],
+            stops: [0, 0.58, 1],
           ),
         ),
         child: SafeArea(
@@ -91,9 +91,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                       colors: [
-                        Colors.white.withValues(alpha: 0.18),
-                        _blush.withValues(alpha: 0.42),
-                        _deepPlum.withValues(alpha: 0.68),
+                        Colors.white.withValues(alpha: 0.20),
+                        _mist.withValues(alpha: 0.46),
+                        _blue.withValues(alpha: 0.54),
                       ],
                     ),
                     border: Border.all(
@@ -101,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: _deepPlum.withValues(alpha: 0.38),
+                        color: _deepBlue.withValues(alpha: 0.28),
                         blurRadius: 34,
                         offset: const Offset(0, 18),
                       ),
@@ -209,10 +209,10 @@ class _LoginScreenState extends State<LoginScreen> {
 }
 
 class _LoginGlassCard extends StatelessWidget {
-  static const Color _pink = Color(0xFFFF74B7);
-  static const Color _plum = Color(0xFF4B1F55);
-  static const Color _deepPlum = Color(0xFF2B123D);
-  static const Color _inkColor = Color(0xFF3A1845);
+  static const Color _mist = Color(0xFFA9C9CB);
+  static const Color _blue = Color(0xFF3E6478);
+  static const Color _deepBlue = Color(0xFF2F566B);
+  static const Color _inkColor = Color(0xFF244556);
 
   final GlobalKey<FormState> formKey;
   final TextEditingController emailController;
@@ -244,7 +244,7 @@ class _LoginGlassCard extends StatelessWidget {
         border: Border.all(color: Colors.white.withValues(alpha: 0.22)),
         boxShadow: [
           BoxShadow(
-            color: _deepPlum.withValues(alpha: 0.22),
+            color: _deepBlue.withValues(alpha: 0.20),
             blurRadius: 28,
             offset: const Offset(0, 14),
           ),
@@ -292,7 +292,7 @@ class _LoginGlassCard extends StatelessWidget {
                   obscurePassword
                       ? Icons.visibility_off_rounded
                       : Icons.visibility_rounded,
-                  color: _plum.withValues(alpha: 0.78),
+                  color: _deepBlue.withValues(alpha: 0.78),
                   size: 20,
                 ),
               ),
@@ -313,11 +313,11 @@ class _LoginGlassCard extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: isLoading ? null : onLogin,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: _plum,
+                  backgroundColor: _blue,
                   foregroundColor: Colors.white,
-                  disabledBackgroundColor: _plum.withValues(alpha: 0.48),
+                  disabledBackgroundColor: _blue.withValues(alpha: 0.48),
                   elevation: 10,
-                  shadowColor: _pink.withValues(alpha: 0.42),
+                  shadowColor: _mist.withValues(alpha: 0.46),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(22),
                   ),
@@ -345,7 +345,7 @@ class _LoginGlassCard extends StatelessWidget {
               child: TextButton(
                 onPressed: onSignup,
                 style: TextButton.styleFrom(
-                  foregroundColor: _deepPlum,
+                  foregroundColor: _deepBlue,
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   textStyle: const TextStyle(fontWeight: FontWeight.w700),
                 ),
@@ -360,8 +360,8 @@ class _LoginGlassCard extends StatelessWidget {
 }
 
 class _LoginField extends StatelessWidget {
-  static const Color _plum = Color(0xFF4B1F55);
-  static const Color _deepPlum = Color(0xFF2B123D);
+  static const Color _blue = Color(0xFF3E6478);
+  static const Color _deepBlue = Color(0xFF244556);
 
   final TextEditingController controller;
   final String label;
@@ -388,26 +388,26 @@ class _LoginField extends StatelessWidget {
       obscureText: obscureText,
       keyboardType: keyboardType,
       validator: validator,
-      style: const TextStyle(color: _deepPlum, fontWeight: FontWeight.w600),
+      style: const TextStyle(color: _deepBlue, fontWeight: FontWeight.w600),
       decoration: InputDecoration(
         labelText: label,
         labelStyle: TextStyle(
-          color: _deepPlum.withValues(alpha: 0.78),
+          color: _deepBlue.withValues(alpha: 0.78),
           fontWeight: FontWeight.w700,
         ),
-        prefixIcon: Icon(icon, color: _plum.withValues(alpha: 0.82), size: 20),
+        prefixIcon: Icon(icon, color: _blue.withValues(alpha: 0.82), size: 20),
         suffixIcon: suffixIcon,
         filled: true,
         fillColor: Colors.white.withValues(alpha: 0.08),
         contentPadding: const EdgeInsets.symmetric(horizontal: 4, vertical: 12),
         border: UnderlineInputBorder(
-          borderSide: BorderSide(color: _deepPlum.withValues(alpha: 0.45)),
+          borderSide: BorderSide(color: _deepBlue.withValues(alpha: 0.45)),
         ),
         enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: _deepPlum.withValues(alpha: 0.45)),
+          borderSide: BorderSide(color: _deepBlue.withValues(alpha: 0.45)),
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: _plum, width: 1.6),
+          borderSide: BorderSide(color: _blue, width: 1.6),
         ),
         errorBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: Color(0xFFB00020)),
